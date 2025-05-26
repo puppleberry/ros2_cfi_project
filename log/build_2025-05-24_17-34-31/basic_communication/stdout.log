@@ -1,0 +1,30 @@
+[35m[1mConsolidate compiler generated dependencies of target memory_analysis[0m
+[35m[1mConsolidate compiler generated dependencies of target vulnerable_subscriber[0m
+[ 37%] Built target publisher
+[ 50%] Built target subscriber
+[ 87%] Built target vulnerable_subscriber
+[ 87%] [32mBuilding CXX object CMakeFiles/memory_analysis.dir/src/memory_analysis.cpp.o[0m
+[100%] [32m[1mLinking CXX executable memory_analysis[0m
+[100%] Built target memory_analysis
+-- Install configuration: ""
+-- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/lib/basic_communication/publisher
+-- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/lib/basic_communication/subscriber
+-- Installing: /home/acelab/ros2_cfi_project/install/basic_communication/lib/basic_communication/memory_analysis
+-- Set runtime path of "/home/acelab/ros2_cfi_project/install/basic_communication/lib/basic_communication/memory_analysis" to ""
+-- Installing: /home/acelab/ros2_cfi_project/install/basic_communication/lib/basic_communication/vulnerable_subscriber
+-- Set runtime path of "/home/acelab/ros2_cfi_project/install/basic_communication/lib/basic_communication/vulnerable_subscriber" to ""
+-- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/ament_index/resource_index/package_run_dependencies/basic_communication
+-- Installing: /home/acelab/ros2_cfi_project/install/basic_communication/share/ament_index/resource_index/parent_prefix_path/basic_communication
+-- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/environment/ament_prefix_path.sh
+-- Installing: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/environment/path.sh
+-- Installing: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/environment/path.dsv
+-- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/local_setup.bash
+-- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/local_setup.sh
+-- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/local_setup.zsh
+-- Installing: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/local_setup.dsv
+-- Installing: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/package.dsv
+-- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/ament_index/resource_index/packages/basic_communication
+-- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/cmake/basic_communicationConfig.cmake
+-- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/cmake/basic_communicationConfig-version.cmake
+-- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/package.xml

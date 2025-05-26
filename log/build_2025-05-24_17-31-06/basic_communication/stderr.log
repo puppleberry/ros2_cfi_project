@@ -1,0 +1,27 @@
+[01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:[m[K In constructor ‘[01m[KVulnerableSubscriber::VulnerableSubscriber()[m[K’:
+[01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:41:59:[m[K [01;35m[Kwarning: [m[Kconverting from ‘[01m[Kvoid (VulnerableSubscriber::*)()[m[K’ to ‘[01m[Kvoid*[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+   41 |                  reinterpret_cast<void*>(function_pointer_[01;35m[K)[m[K << std::endl;
+      |                                                           [01;35m[K^[m[K
+[01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:46:83:[m[K [01;35m[Kwarning: [m[Kconverting from ‘[01m[Kvoid (VulnerableSubscriber::*)()[m[K’ to ‘[01m[Kvoid*[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+   46 |                  reinterpret_cast<void*>(&VulnerableSubscriber::malicious_function[01;35m[K)[m[K << std::endl;
+      |                                                                                   [01;35m[K^[m[K
+[01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:[m[K In member function ‘[01m[Kvoid VulnerableSubscriber::vulnerable_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:82:59:[m[K [01;35m[Kwarning: [m[Kconverting from ‘[01m[Kvoid (VulnerableSubscriber::*)()[m[K’ to ‘[01m[Kvoid*[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+   82 |                  reinterpret_cast<void*>(function_pointer_[01;35m[K)[m[K << std::endl;
+      |                                                           [01;35m[K^[m[K
+[01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:90:59:[m[K [01;35m[Kwarning: [m[Kconverting from ‘[01m[Kvoid (VulnerableSubscriber::*)()[m[K’ to ‘[01m[Kvoid*[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+   90 |                  reinterpret_cast<void*>(function_pointer_[01;35m[K)[m[K << std::endl;
+      |                                                           [01;35m[K^[m[K
+[01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/memory_analysis.cpp:[m[K In member function ‘[01m[Kvoid MemoryAnalysisNode::message_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/memory_analysis.cpp:51:23:[m[K [01;31m[Kerror: [m[Kinvalid conversion from ‘[01m[Kconst void*[m[K’ to ‘[01m[Kvoid*[m[K’ [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+   51 |     void* local_var = [01;31m[K&msg[m[K;
+      |                       [01;31m[K^~~~[m[K
+      |                       [01;31m[K|[m[K
+      |                       [01;31m[Kconst void*[m[K
+[01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/memory_analysis.cpp:56:79:[m[K [01;35m[Kwarning: [m[Kconverting from ‘[01m[Kvoid (MemoryAnalysisNode::*)(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’ {aka ‘[01m[Kvoid (MemoryAnalysisNode::*)(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)[m[K’} to ‘[01m[Kvoid*[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+   56 |                  reinterpret_cast<void*>(&MemoryAnalysisNode::message_callback[01;35m[K)[m[K << std::endl;
+      |                                                                               [01;35m[K^[m[K
+gmake[2]: *** [CMakeFiles/memory_analysis.dir/build.make:76: CMakeFiles/memory_analysis.dir/src/memory_analysis.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:195: CMakeFiles/memory_analysis.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,38 @@
+[0.009s] Invoking command in '/home/acelab/ros2_cfi_project/build/basic_communication': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/acelab/ros2_cfi_project/build/basic_communication -- -j16 -l16
+[0.046s] [35m[1mConsolidate compiler generated dependencies of target memory_analysis[0m
+[0.046s] [35m[1mConsolidate compiler generated dependencies of target vulnerable_subscriber[0m
+[0.059s] [ 37%] Built target publisher
+[0.059s] [ 50%] Built target subscriber
+[0.061s] [ 87%] Built target vulnerable_subscriber
+[0.061s] [ 87%] [32mBuilding CXX object CMakeFiles/memory_analysis.dir/src/memory_analysis.cpp.o[0m
+[1.744s] [01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/memory_analysis.cpp:[m[K In member function ‘[01m[Kvoid MemoryAnalysisNode::message_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[1.744s] [01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/memory_analysis.cpp:56:79:[m[K [01;35m[Kwarning: [m[Kconverting from ‘[01m[Kvoid (MemoryAnalysisNode::*)(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’ {aka ‘[01m[Kvoid (MemoryAnalysisNode::*)(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)[m[K’} to ‘[01m[Kvoid*[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[1.745s]    56 |                  reinterpret_cast<void*>(&MemoryAnalysisNode::message_callback[01;35m[K)[m[K << std::endl;
+[1.745s]       |                                                                               [01;35m[K^[m[K
+[5.776s] [100%] [32m[1mLinking CXX executable memory_analysis[0m
+[6.044s] [100%] Built target memory_analysis
+[6.057s] Invoked command in '/home/acelab/ros2_cfi_project/build/basic_communication' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/acelab/ros2_cfi_project/build/basic_communication -- -j16 -l16
+[6.065s] Invoking command in '/home/acelab/ros2_cfi_project/build/basic_communication': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/acelab/ros2_cfi_project/build/basic_communication
+[6.071s] -- Install configuration: ""
+[6.072s] -- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/lib/basic_communication/publisher
+[6.072s] -- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/lib/basic_communication/subscriber
+[6.072s] -- Installing: /home/acelab/ros2_cfi_project/install/basic_communication/lib/basic_communication/memory_analysis
+[6.075s] -- Set runtime path of "/home/acelab/ros2_cfi_project/install/basic_communication/lib/basic_communication/memory_analysis" to ""
+[6.076s] -- Installing: /home/acelab/ros2_cfi_project/install/basic_communication/lib/basic_communication/vulnerable_subscriber
+[6.079s] -- Set runtime path of "/home/acelab/ros2_cfi_project/install/basic_communication/lib/basic_communication/vulnerable_subscriber" to ""
+[6.079s] -- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/ament_index/resource_index/package_run_dependencies/basic_communication
+[6.079s] -- Installing: /home/acelab/ros2_cfi_project/install/basic_communication/share/ament_index/resource_index/parent_prefix_path/basic_communication
+[6.079s] -- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/environment/ament_prefix_path.sh
+[6.079s] -- Installing: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/environment/ament_prefix_path.dsv
+[6.079s] -- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/environment/path.sh
+[6.080s] -- Installing: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/environment/path.dsv
+[6.080s] -- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/local_setup.bash
+[6.080s] -- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/local_setup.sh
+[6.080s] -- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/local_setup.zsh
+[6.080s] -- Installing: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/local_setup.dsv
+[6.080s] -- Installing: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/package.dsv
+[6.080s] -- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/ament_index/resource_index/packages/basic_communication
+[6.080s] -- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/cmake/basic_communicationConfig.cmake
+[6.080s] -- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/cmake/basic_communicationConfig-version.cmake
+[6.080s] -- Up-to-date: /home/acelab/ros2_cfi_project/install/basic_communication/share/basic_communication/package.xml
+[6.082s] Invoked command in '/home/acelab/ros2_cfi_project/build/basic_communication' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/acelab/ros2_cfi_project/build/basic_communication

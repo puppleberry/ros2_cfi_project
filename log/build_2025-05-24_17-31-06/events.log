@@ -1,0 +1,131 @@
+[0.000000] (-) TimerEvent: {}
+[0.000319] (basic_communication) JobQueued: {'identifier': 'basic_communication', 'dependencies': OrderedDict()}
+[0.000360] (basic_communication) JobStarted: {'identifier': 'basic_communication'}
+[0.006043] (basic_communication) JobProgress: {'identifier': 'basic_communication', 'progress': 'cmake'}
+[0.006418] (basic_communication) JobProgress: {'identifier': 'basic_communication', 'progress': 'build'}
+[0.006985] (basic_communication) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/acelab/ros2_cfi_project/build/basic_communication', '--', '-j16', '-l16'], 'cwd': '/home/acelab/ros2_cfi_project/build/basic_communication', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'acelab'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/acelab'), ('OLDPWD', '/home/acelab/ros2_cfi_project/src/basic_communication/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1492'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/acelab/ros2_cfi_project/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'acelab'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'acelab'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/acelab/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/acelab-desktop:@/tmp/.ICE-unix/1258,unix/acelab-desktop:/tmp/.ICE-unix/1258'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/6c63dcec_8f85_4baa_bf8e_11e8940d9b30'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.165K72'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.120'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/acelab/ros2_cfi_project/install/basic_communication:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/acelab/ros2_cfi_project/build/basic_communication'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/acelab/ros2_cfi_project/install/basic_communication:/opt/ros/humble')]), 'shell': False}
+[0.029481] (basic_communication) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099425] (-) TimerEvent: {}
+[0.126971] (basic_communication) StdoutLine: {'line': b'-- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.157652] (basic_communication) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.159716] (basic_communication) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.164494] (basic_communication) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.172165] (basic_communication) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.182165] (basic_communication) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.199494] (-) TimerEvent: {}
+[0.207414] (basic_communication) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.208464] (basic_communication) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.297606] (basic_communication) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.299568] (-) TimerEvent: {}
+[0.338812] (basic_communication) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[0.390494] (basic_communication) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[0.390665] (basic_communication) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[0.390713] (basic_communication) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[0.391093] (basic_communication) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.391984] (basic_communication) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[0.392081] (basic_communication) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[0.392221] (basic_communication) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.392785] (basic_communication) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.399653] (-) TimerEvent: {}
+[0.407325] (basic_communication) StdoutLine: {'line': b'-- Generating done\n'}
+[0.413183] (basic_communication) StdoutLine: {'line': b'-- Build files have been written to: /home/acelab/ros2_cfi_project/build/basic_communication\n'}
+[0.438708] (basic_communication) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target subscriber\x1b[0m\n'}
+[0.438908] (basic_communication) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target publisher\x1b[0m\n'}
+[0.446724] (basic_communication) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding CXX object CMakeFiles/vulnerable_subscriber.dir/src/vulnerable_subscriber.cpp.o\x1b[0m\n'}
+[0.447032] (basic_communication) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/memory_analysis.dir/src/memory_analysis.cpp.o\x1b[0m\n'}
+[0.453635] (basic_communication) StdoutLine: {'line': b'[ 50%] Built target subscriber\n'}
+[0.454034] (basic_communication) StdoutLine: {'line': b'[ 75%] Built target publisher\n'}
+[0.499778] (-) TimerEvent: {}
+[0.600101] (-) TimerEvent: {}
+[0.700419] (-) TimerEvent: {}
+[0.800767] (-) TimerEvent: {}
+[0.901129] (-) TimerEvent: {}
+[1.001471] (-) TimerEvent: {}
+[1.101813] (-) TimerEvent: {}
+[1.202160] (-) TimerEvent: {}
+[1.302504] (-) TimerEvent: {}
+[1.402854] (-) TimerEvent: {}
+[1.503213] (-) TimerEvent: {}
+[1.603540] (-) TimerEvent: {}
+[1.703854] (-) TimerEvent: {}
+[1.804219] (-) TimerEvent: {}
+[1.904563] (-) TimerEvent: {}
+[2.004916] (-) TimerEvent: {}
+[2.118441] (-) TimerEvent: {}
+[2.142122] (basic_communication) StderrLine: {'line': b'\x1b[01m\x1b[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KVulnerableSubscriber::VulnerableSubscriber()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.142407] (basic_communication) StderrLine: {'line': b'\x1b[01m\x1b[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:41:59:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kconverting from \xe2\x80\x98\x1b[01m\x1b[Kvoid (VulnerableSubscriber::*)()\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kvoid*\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.142503] (basic_communication) StderrLine: {'line': b'   41 |                  reinterpret_cast<void*>(function_pointer_\x1b[01;35m\x1b[K)\x1b[m\x1b[K << std::endl;\n'}
+[2.142585] (basic_communication) StderrLine: {'line': b'      |                                                           \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.142662] (basic_communication) StderrLine: {'line': b'\x1b[01m\x1b[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:46:83:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kconverting from \xe2\x80\x98\x1b[01m\x1b[Kvoid (VulnerableSubscriber::*)()\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kvoid*\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.142742] (basic_communication) StderrLine: {'line': b'   46 |                  reinterpret_cast<void*>(&VulnerableSubscriber::malicious_function\x1b[01;35m\x1b[K)\x1b[m\x1b[K << std::endl;\n'}
+[2.142819] (basic_communication) StderrLine: {'line': b'      |                                                                                   \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.151578] (basic_communication) StderrLine: {'line': b'\x1b[01m\x1b[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid VulnerableSubscriber::vulnerable_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.151796] (basic_communication) StderrLine: {'line': b'\x1b[01m\x1b[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:82:59:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kconverting from \xe2\x80\x98\x1b[01m\x1b[Kvoid (VulnerableSubscriber::*)()\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kvoid*\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.151909] (basic_communication) StderrLine: {'line': b'   82 |                  reinterpret_cast<void*>(function_pointer_\x1b[01;35m\x1b[K)\x1b[m\x1b[K << std::endl;\n'}
+[2.152014] (basic_communication) StderrLine: {'line': b'      |                                                           \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.152091] (basic_communication) StderrLine: {'line': b'\x1b[01m\x1b[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:90:59:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kconverting from \xe2\x80\x98\x1b[01m\x1b[Kvoid (VulnerableSubscriber::*)()\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kvoid*\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.152182] (basic_communication) StderrLine: {'line': b'   90 |                  reinterpret_cast<void*>(function_pointer_\x1b[01;35m\x1b[K)\x1b[m\x1b[K << std::endl;\n'}
+[2.152283] (basic_communication) StderrLine: {'line': b'      |                                                           \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.157044] (basic_communication) StderrLine: {'line': b'\x1b[01m\x1b[K/home/acelab/ros2_cfi_project/src/basic_communication/src/memory_analysis.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid MemoryAnalysisNode::message_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.157209] (basic_communication) StderrLine: {'line': b'\x1b[01m\x1b[K/home/acelab/ros2_cfi_project/src/basic_communication/src/memory_analysis.cpp:51:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid conversion from \xe2\x80\x98\x1b[01m\x1b[Kconst void*\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kvoid*\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.157309] (basic_communication) StderrLine: {'line': b'   51 |     void* local_var = \x1b[01;31m\x1b[K&msg\x1b[m\x1b[K;\n'}
+[2.157387] (basic_communication) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.157464] (basic_communication) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[2.157627] (basic_communication) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[Kconst void*\x1b[m\x1b[K\n'}
+[2.157705] (basic_communication) StderrLine: {'line': b'\x1b[01m\x1b[K/home/acelab/ros2_cfi_project/src/basic_communication/src/memory_analysis.cpp:56:79:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kconverting from \xe2\x80\x98\x1b[01m\x1b[Kvoid (MemoryAnalysisNode::*)(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kvoid (MemoryAnalysisNode::*)(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)\x1b[m\x1b[K\xe2\x80\x99} to \xe2\x80\x98\x1b[01m\x1b[Kvoid*\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.157787] (basic_communication) StderrLine: {'line': b'   56 |                  reinterpret_cast<void*>(&MemoryAnalysisNode::message_callback\x1b[01;35m\x1b[K)\x1b[m\x1b[K << std::endl;\n'}
+[2.157864] (basic_communication) StderrLine: {'line': b'      |                                                                               \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[2.218571] (-) TimerEvent: {}
+[2.318907] (-) TimerEvent: {}
+[2.419260] (-) TimerEvent: {}
+[2.519595] (-) TimerEvent: {}
+[2.619915] (-) TimerEvent: {}
+[2.720240] (-) TimerEvent: {}
+[2.820579] (-) TimerEvent: {}
+[2.920924] (-) TimerEvent: {}
+[3.021273] (-) TimerEvent: {}
+[3.121605] (-) TimerEvent: {}
+[3.222494] (-) TimerEvent: {}
+[3.322845] (-) TimerEvent: {}
+[3.423220] (-) TimerEvent: {}
+[3.523557] (-) TimerEvent: {}
+[3.623910] (-) TimerEvent: {}
+[3.724281] (-) TimerEvent: {}
+[3.824600] (-) TimerEvent: {}
+[3.912072] (basic_communication) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/memory_analysis.dir/build.make:76: CMakeFiles/memory_analysis.dir/src/memory_analysis.cpp.o] Error 1\n'}
+[3.912480] (basic_communication) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:195: CMakeFiles/memory_analysis.dir/all] Error 2\n'}
+[3.912582] (basic_communication) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[3.924706] (-) TimerEvent: {}
+[4.025024] (-) TimerEvent: {}
+[4.125334] (-) TimerEvent: {}
+[4.225628] (-) TimerEvent: {}
+[4.325958] (-) TimerEvent: {}
+[4.426292] (-) TimerEvent: {}
+[4.526615] (-) TimerEvent: {}
+[4.626913] (-) TimerEvent: {}
+[4.727304] (-) TimerEvent: {}
+[4.827602] (-) TimerEvent: {}
+[4.927878] (-) TimerEvent: {}
+[5.028188] (-) TimerEvent: {}
+[5.128483] (-) TimerEvent: {}
+[5.228779] (-) TimerEvent: {}
+[5.329095] (-) TimerEvent: {}
+[5.429385] (-) TimerEvent: {}
+[5.529694] (-) TimerEvent: {}
+[5.629992] (-) TimerEvent: {}
+[5.730698] (-) TimerEvent: {}
+[5.831215] (-) TimerEvent: {}
+[5.931524] (-) TimerEvent: {}
+[6.031873] (-) TimerEvent: {}
+[6.132217] (-) TimerEvent: {}
+[6.232548] (-) TimerEvent: {}
+[6.332908] (-) TimerEvent: {}
+[6.385863] (basic_communication) StdoutLine: {'line': b'[ 87%] \x1b[32m\x1b[1mLinking CXX executable vulnerable_subscriber\x1b[0m\n'}
+[6.433015] (-) TimerEvent: {}
+[6.533323] (-) TimerEvent: {}
+[6.633640] (-) TimerEvent: {}
+[6.662522] (basic_communication) StdoutLine: {'line': b'[ 87%] Built target vulnerable_subscriber\n'}
+[6.663918] (basic_communication) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[6.666540] (basic_communication) CommandEnded: {'returncode': 2}
+[6.674330] (basic_communication) JobEnded: {'identifier': 'basic_communication', 'rc': 2}
+[6.684695] (-) EventReactorShutdown: {}

@@ -1,0 +1,58 @@
+[0.008s] Invoking command in '/home/acelab/ros2_cfi_project/build/basic_communication': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/acelab/ros2_cfi_project/build/basic_communication -- -j16 -l16
+[0.029s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.127s] -- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+[0.157s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.159s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.164s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.172s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.182s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.207s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.208s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.297s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.339s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.390s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.390s] -- Configured cppcheck include dirs: 
+[0.390s] -- Configured cppcheck exclude dirs and/or files: 
+[0.391s] -- Added test 'lint_cmake' to check CMake code style
+[0.392s] -- Added test 'uncrustify' to check C / C++ code style
+[0.392s] -- Configured uncrustify additional arguments: 
+[0.392s] -- Added test 'xmllint' to check XML markup files
+[0.392s] -- Configuring done
+[0.407s] -- Generating done
+[0.413s] -- Build files have been written to: /home/acelab/ros2_cfi_project/build/basic_communication
+[0.438s] [35m[1mConsolidate compiler generated dependencies of target subscriber[0m
+[0.439s] [35m[1mConsolidate compiler generated dependencies of target publisher[0m
+[0.446s] [ 12%] [32mBuilding CXX object CMakeFiles/vulnerable_subscriber.dir/src/vulnerable_subscriber.cpp.o[0m
+[0.447s] [ 25%] [32mBuilding CXX object CMakeFiles/memory_analysis.dir/src/memory_analysis.cpp.o[0m
+[0.453s] [ 50%] Built target subscriber
+[0.454s] [ 75%] Built target publisher
+[2.142s] [01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:[m[K In constructor ‘[01m[KVulnerableSubscriber::VulnerableSubscriber()[m[K’:
+[2.142s] [01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:41:59:[m[K [01;35m[Kwarning: [m[Kconverting from ‘[01m[Kvoid (VulnerableSubscriber::*)()[m[K’ to ‘[01m[Kvoid*[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[2.142s]    41 |                  reinterpret_cast<void*>(function_pointer_[01;35m[K)[m[K << std::endl;
+[2.142s]       |                                                           [01;35m[K^[m[K
+[2.142s] [01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:46:83:[m[K [01;35m[Kwarning: [m[Kconverting from ‘[01m[Kvoid (VulnerableSubscriber::*)()[m[K’ to ‘[01m[Kvoid*[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[2.142s]    46 |                  reinterpret_cast<void*>(&VulnerableSubscriber::malicious_function[01;35m[K)[m[K << std::endl;
+[2.143s]       |                                                                                   [01;35m[K^[m[K
+[2.151s] [01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:[m[K In member function ‘[01m[Kvoid VulnerableSubscriber::vulnerable_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[2.151s] [01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:82:59:[m[K [01;35m[Kwarning: [m[Kconverting from ‘[01m[Kvoid (VulnerableSubscriber::*)()[m[K’ to ‘[01m[Kvoid*[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[2.152s]    82 |                  reinterpret_cast<void*>(function_pointer_[01;35m[K)[m[K << std::endl;
+[2.152s]       |                                                           [01;35m[K^[m[K
+[2.152s] [01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/vulnerable_subscriber.cpp:90:59:[m[K [01;35m[Kwarning: [m[Kconverting from ‘[01m[Kvoid (VulnerableSubscriber::*)()[m[K’ to ‘[01m[Kvoid*[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[2.152s]    90 |                  reinterpret_cast<void*>(function_pointer_[01;35m[K)[m[K << std::endl;
+[2.152s]       |                                                           [01;35m[K^[m[K
+[2.157s] [01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/memory_analysis.cpp:[m[K In member function ‘[01m[Kvoid MemoryAnalysisNode::message_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
+[2.157s] [01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/memory_analysis.cpp:51:23:[m[K [01;31m[Kerror: [m[Kinvalid conversion from ‘[01m[Kconst void*[m[K’ to ‘[01m[Kvoid*[m[K’ [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+[2.157s]    51 |     void* local_var = [01;31m[K&msg[m[K;
+[2.157s]       |                       [01;31m[K^~~~[m[K
+[2.157s]       |                       [01;31m[K|[m[K
+[2.157s]       |                       [01;31m[Kconst void*[m[K
+[2.157s] [01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/memory_analysis.cpp:56:79:[m[K [01;35m[Kwarning: [m[Kconverting from ‘[01m[Kvoid (MemoryAnalysisNode::*)(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’ {aka ‘[01m[Kvoid (MemoryAnalysisNode::*)(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)[m[K’} to ‘[01m[Kvoid*[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[2.157s]    56 |                  reinterpret_cast<void*>(&MemoryAnalysisNode::message_callback[01;35m[K)[m[K << std::endl;
+[2.158s]       |                                                                               [01;35m[K^[m[K
+[3.912s] gmake[2]: *** [CMakeFiles/memory_analysis.dir/build.make:76: CMakeFiles/memory_analysis.dir/src/memory_analysis.cpp.o] Error 1
+[3.912s] gmake[1]: *** [CMakeFiles/Makefile2:195: CMakeFiles/memory_analysis.dir/all] Error 2
+[3.912s] gmake[1]: *** Waiting for unfinished jobs....
+[6.386s] [ 87%] [32m[1mLinking CXX executable vulnerable_subscriber[0m
+[6.662s] [ 87%] Built target vulnerable_subscriber
+[6.664s] gmake: *** [Makefile:146: all] Error 2
+[6.666s] Invoked command in '/home/acelab/ros2_cfi_project/build/basic_communication' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/acelab/ros2_cfi_project/build/basic_communication -- -j16 -l16
