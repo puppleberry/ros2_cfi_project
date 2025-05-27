@@ -18,6 +18,7 @@ run_with_cfi() {
     fi
     
     echo "Running $2 from $1 with CFI protection..."
+    source ~/ros2_ws/install/setup.bash
     LD_PRELOAD=$CFI_LIB_PATH ros2 run $1 $2
 }
 

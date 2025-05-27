@@ -1,2 +1,0 @@
-Invoking command in '/home/acelab/ros2_cfi_project/build/basic_communication': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/acelab/ros2_cfi_project/build/basic_communication -- -j16 -l16
-Invoked command in '/home/acelab/ros2_cfi_project/build/basic_communication' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/acelab/ros2_cfi_project/build/basic_communication -- -j16 -l16

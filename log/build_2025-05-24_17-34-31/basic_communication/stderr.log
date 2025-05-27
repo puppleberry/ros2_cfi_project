@@ -1,4 +1,0 @@
-[01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/memory_analysis.cpp:[m[K In member function ‘[01m[Kvoid MemoryAnalysisNode::message_callback(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’:
-[01m[K/home/acelab/ros2_cfi_project/src/basic_communication/src/memory_analysis.cpp:56:79:[m[K [01;35m[Kwarning: [m[Kconverting from ‘[01m[Kvoid (MemoryAnalysisNode::*)(std_msgs::msg::String_<std::allocator<void> >::SharedPtr)[m[K’ {aka ‘[01m[Kvoid (MemoryAnalysisNode::*)(std::shared_ptr<std_msgs::msg::String_<std::allocator<void> > >)[m[K’} to ‘[01m[Kvoid*[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
-   56 |                  reinterpret_cast<void*>(&MemoryAnalysisNode::message_callback[01;35m[K)[m[K << std::endl;
-      |                                                                               [01;35m[K^[m[K
