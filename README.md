@@ -1,81 +1,47 @@
-# ROS2 WITH CFI(Control Flow Integrity)
+# ROS2 CFI (Control Flow Integrity) Project
 
-## PROJECT OVERVIEW
-  - Simulate control-flow hijacking vulnerability for message callback system of ROS2
-  - Implement low-volume, efficient CFI(Control-Flow Integrity) mechanism and program
-
-### Attack Scenario: ROS2 Callback Hijacking
-  - Overwrite subscription callback function pointer of ROS2 with buffer overflow
-  - WHY?
-    - Target core mechanism of ROS2, Publisher & Subscriber Model
-    - Callback function pointers use indirect calls, making them CFI protect friendly
-    - Simulating is clearn and easy to understand
-    - Attacks that can be fatal in real robot systems
-   
-### How CFI Implemented: Runtime Hook-Based CFI
-  - It is implemented by runtime hooking using LD_PRELOAD
-    - Hooking the callback registration/call function of ROS2
-    - Whitelist management of legitimate callback function
-    - Verify the address at the time of callback call
-    - Ending the program in case of abnormal control flow detection
-
-## RUNNING PROJECT
-
-### SYSTEM SETTING
-
-> Ubuntu 22.04 Jammy Jellyfish
-
-``` bash
-sudo apt update && sudo apt upgrade -y
+## 프로젝트 구조
+```
+ros2_cfi_project/
+├── cfi_lib/           # CFI 라이브러리
+├── exploit/           # 공격 코드
+├── evaluation/        # 평가 스크립트
+├── docs/              # 문서
+└── logs/              # 로그 파일
 ```
 
-``` bash
-sudo apt install software-properties-common curl gnupg2 lsb-release -y
-```
-- `software-properties-common`: easy to manage APT repo
-- `gnuog2`: for verifying digital signature
-
-``` bash
-sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
-
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
-
-sudo apt update
-```
-
-- ROS2 GPG key download and install
-- Add ROS2 repository to APT repos
-
-### ROS2 HUMBLE
-
-``` bash
-sudo apt install ros-humble-desktop -y
-
-sudo apt install ros-dev-tools -y
-# for ROS2 core, development tools and other dependency
-```
-
+## 빌드 방법
 ```bash
-source /opt/ros/humble/setup.bash
-
-echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
-# You can turn on ROS2 environment and for automatically active environment, add this code to bashrc
-
-source ~/.bashrc
+cd cfi_lib
+make all
 ```
 
+## 사용 방법
+
+### 1. 환경 설정
 ```bash
-mkdir -p ~/ros2_cfi_project/src
-cd ~/ros2_cfi_project
-
-colcon build
-# in here, we build workspace
-
-source install/setup.bash
-# sourcing workspace's environment
+source ~/ros2_cfi_project/setup_env.sh
 ```
 
-``` bash
-sudo apt install gdb valgrind -y
+### 2. ROS2 노드와 함께 실행
+```bash
+# 방법 1: run_with_cfi 함수 사용
+run_with_cfi basic_communication vulnerable_subscriber
+
+# 방법 2: 직접 LD_PRELOAD 사용
+LD_PRELOAD=~/ros2_cfi_project/cfi_lib/libros2_cfi.so ros2 run basic_communication vulnerable_subscriber
 ```
-- Additionally, You can install Debugging Tool for future
+
+### 3. 로그 확인
+```bash
+cfi_log  # 또는 tail -f /tmp/ros2_cfi.log
+```
+
+## 환경 변수
+- `ROS2_CFI_DISABLE`: CFI 비활성화 (1로 설정 시)
+- `ROS2_CFI_LOG_LEVEL`: 로그 레벨 (DEBUG/INFO/WARN/ERROR)
+
+## 다음 단계
+- [ ] rclcpp subscription 함수 후킹
+- [ ] 콜백 화이트리스트 구현
+- [ ] 실제 공격 방어 테스트
