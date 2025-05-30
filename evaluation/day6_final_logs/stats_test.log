@@ -1,0 +1,28 @@
+[CFI] === ROS2 CFI Day 6 (Final Version) ===
+[CFI] PID: 8396
+[CFI] Process: subscriber
+[0;32m[CFI-SUCCESS] CFI initialized successfully![0m
+[CFI] Waiting for ROS2 callbacks...
+[0;32m[CFI-SUCCESS] === CFI Protection Active! First callback intercepted ===[0m
+[0;32m[CFI-SUCCESS] Registered new subscription 0x7e088dcdc830 (hash: 0x7e4492b18e505ef8)[0m
+[0;32m[CFI-SUCCESS] Registered new subscription 0x6204a25a8600 (hash: 0x94f8496139144cfc)[0m
+[INFO] [1748581525.292482041] [minimal_subscriber]: I heard: 'Stats test'
+[INFO] [1748581527.450025351] [rclcpp]: signal_handler(signum=15)
+[CFI] 
+=== ROS2 CFI Session Summary ===
+[CFI] 
+╔══════════════════════════════════════════╗
+[CFI] ║        CFI Performance Statistics        ║
+[CFI] ╠══════════════════════════════════════════╣
+[CFI] ║ Total callback executions: 5             ║
+[CFI] ║ Total violations detected: 0             ║
+[CFI] ║ Shadow stack violations:   0             ║
+[CFI] ║ Monitored subscriptions:   2             ║
+[CFI] ║ Validated subscriptions:   2             ║
+[CFI] ║ Shadow stack enabled:      YES           ║
+[CFI] ║ Performance mode:          0             ║
+[CFI] ║ CFI mode:                  PERMISSIVE    ║
+[CFI] ║ Hook status:               SUCCESS       ║
+[CFI] ╚══════════════════════════════════════════╝
+[0;32m[CFI-SUCCESS] ✅ No violations detected in 5 callback executions![0m
+[CFI] Statistics saved to /home/acelab/ros2_cfi_project/evaluation/day6_final_logs/test_stats_20250530_140521.txt

@@ -1,0 +1,14 @@
+[INFO] [1748581528.468763249] [performance_monitor]: === CFI Performance Monitor ===
+[INFO] [1748581528.469474589] [performance_monitor]: Monitor configured: 5 sec duration, 50 Hz frequency
+[INFO] [1748581528.469489537] [performance_monitor]: Performance monitor started. This will run for the configured duration.
+[INFO] [1748581530.469594486] [performance_monitor]: Starting performance measurement...
+[INFO] [1748581550.470406761] [performance_monitor]: Progress: 0 callbacks, 1748581550 seconds elapsed
+[INFO] [1748581552.470433735] [performance_monitor]: 
+=== Performance Statistics ===
+Latency (μs): mean=9.00, p50=9.29, p95=11.60, p99=36.25
+              min=6.39, max=36.25
+CPU overhead: 99.99%
+Callbacks: 99
+[INFO] [1748581552.470515309] [performance_monitor]: Measurement complete!
+[INFO] [1748581552.470962622] [performance_monitor]: Results saved to /tmp/cfi_performance_results.csv
+[INFO] [1748581552.471703898] [performance_monitor]: Results saved to /tmp/cfi_performance_results.csv
