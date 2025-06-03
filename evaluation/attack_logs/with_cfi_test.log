@@ -1,0 +1,44 @@
+[CFI] === ROS2 CFI Day 6 (Final Version) ===
+[CFI] PID: 5673
+[CFI] Process: vulnerable_targ
+[CFI] Strict mode ENABLED
+[CFI] Debug mode ENABLED
+[0;32m[CFI-SUCCESS] CFI initialized successfully![0m
+[CFI] Waiting for ROS2 callbacks...
+[INFO] [1748767162.962814850] [vulnerable_target]: Vulnerable node started!
+[INFO] [1748767162.963266112] [vulnerable_target]: Subscription ptr: 0x5c3820c6bc70
+[INFO] [1748767162.963277434] [vulnerable_target]: Buffer ptr: 0x5c3820c76060
+[INFO] [1748767162.963281872] [vulnerable_target]: Node ready to receive messages on /attack_topic
+[0;36m[CFI-DEBUG] Searching for original function: _ZN6rclcpp8Executor20execute_subscriptionESt10shared_ptrINS_16SubscriptionBaseEE[0m
+[0;36m[CFI-DEBUG] Found via RTLD_NEXT: 0x72834f97a600[0m
+[0;32m[CFI-SUCCESS] === CFI Protection Active! First callback intercepted ===[0m
+[0;36m[CFI-DEBUG] Intercepted call #1: executor=0x7ffd70ac9f20, subscription=0x72834fa85830[0m
+[0;31m[CFI-ERROR] 🚨 CFI VIOLATION: Unregistered subscription execution attempt![0m
+[0;31m[CFI-ERROR]   Subscription pointer: 0x72834fa85830[0m
+[0;31m[CFI-ERROR]   This subscription was never registered with CFI![0m
+[0;31m[CFI-ERROR]   ❌ BLOCKING EXECUTION (strict mode)[0m
+
+=== Vulnerable Target Node ===
+This node has a buffer overflow vulnerability.
+Send messages to /attack_topic to test.
+Use 'OVERFLOW:' prefix to trigger vulnerable code path.
+
+
+[CFI DEFENSE] Program aborted by CFI!
+[CFI] 
+=== ROS2 CFI Session Summary ===
+[CFI] 
+╔══════════════════════════════════════════╗
+[CFI] ║        CFI Performance Statistics        ║
+[CFI] ╠══════════════════════════════════════════╣
+[CFI] ║ Total callback executions: 1             ║
+[CFI] ║ Total violations detected: 1             ║
+[CFI] ║ Shadow stack violations:   0             ║
+[CFI] ║ Monitored subscriptions:   0             ║
+[CFI] ║ Validated subscriptions:   0             ║
+[CFI] ║ Shadow stack enabled:      YES           ║
+[CFI] ║ Performance mode:          0             ║
+[CFI] ║ CFI mode:                  STRICT        ║
+[CFI] ║ Hook status:               SUCCESS       ║
+[CFI] ╚══════════════════════════════════════════╝
+[0;31m[CFI-ERROR] ⚠️  CFI detected 1 violations during this session![0m

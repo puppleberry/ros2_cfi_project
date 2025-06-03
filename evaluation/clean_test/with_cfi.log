@@ -1,0 +1,57 @@
+[CFI] === ROS2 CFI Day 6 (Final Version) ===
+[CFI] PID: 6716
+[CFI] Process: vulnerable_targ
+[CFI] Debug mode ENABLED
+[0;32m[CFI-SUCCESS] CFI initialized successfully![0m
+[CFI] Waiting for ROS2 callbacks...
+[INFO] [1748769687.186384654] [vulnerable_target]: Vulnerable node started!
+[INFO] [1748769687.186835825] [vulnerable_target]: Subscription ptr: 0x608d731c5c80
+[INFO] [1748769687.186849852] [vulnerable_target]: Buffer ptr: 0x608d731d0070
+[INFO] [1748769687.186855061] [vulnerable_target]: Node ready to receive messages on /attack_topic
+[0;36m[CFI-DEBUG] Searching for original function: _ZN6rclcpp8Executor20execute_subscriptionESt10shared_ptrINS_16SubscriptionBaseEE[0m
+[0;36m[CFI-DEBUG] Found via RTLD_NEXT: 0x7479665b1600[0m
+[0;32m[CFI-SUCCESS] === CFI Protection Active! First callback intercepted ===[0m
+[0;36m[CFI-DEBUG] Intercepted call #1: executor=0x7fff2e0a0220, subscription=0x7479666bc830[0m
+[0;36m[CFI-DEBUG] Shadow stack push: depth=1, ret=0x7479665b210f, sub=0x7479666bc830[0m
+[0;32m[CFI-SUCCESS] Registered new subscription 0x7479666bc830 (hash: 0x6ff0a665de505ef8)[0m
+[0;36m[CFI-DEBUG] Shadow stack pop: depth=0[0m
+[0;36m[CFI-DEBUG] Intercepted call #2: executor=0x7fff2e0a0220, subscription=0x7479666bc830[0m
+[0;36m[CFI-DEBUG] Shadow stack push: depth=1, ret=0x7479665b210f, sub=0x7479666bc830[0m
+[0;36m[CFI-DEBUG] Fast path: subscription 0x7479666bc830 already validated[0m
+[0;36m[CFI-DEBUG] Shadow stack pop: depth=0[0m
+[0;36m[CFI-DEBUG] Intercepted call #3: executor=0x7fff2e0a0220, subscription=0x7479666bc830[0m
+[0;36m[CFI-DEBUG] Shadow stack push: depth=1, ret=0x7479665b210f, sub=0x7479666bc830[0m
+[0;36m[CFI-DEBUG] Fast path: subscription 0x7479666bc830 already validated[0m
+[0;36m[CFI-DEBUG] Shadow stack pop: depth=0[0m
+[0;36m[CFI-DEBUG] Intercepted call #4: executor=0x7fff2e0a0220, subscription=0x7479666bc830[0m
+[0;36m[CFI-DEBUG] Shadow stack push: depth=1, ret=0x7479665b210f, sub=0x7479666bc830[0m
+[0;36m[CFI-DEBUG] Fast path: subscription 0x7479666bc830 already validated[0m
+[0;36m[CFI-DEBUG] Shadow stack pop: depth=0[0m
+[0;36m[CFI-DEBUG] Intercepted call #5: executor=0x7fff2e0a0220, subscription=0x7479666bc830[0m
+[0;36m[CFI-DEBUG] Shadow stack push: depth=1, ret=0x7479665b210f, sub=0x7479666bc830[0m
+[0;36m[CFI-DEBUG] Fast path: subscription 0x7479666bc830 already validated[0m
+[0;36m[CFI-DEBUG] Shadow stack pop: depth=0[0m
+[INFO] [1748769697.170760896] [rclcpp]: signal_handler(signum=15)
+[CFI] 
+=== ROS2 CFI Session Summary ===
+[CFI] 
+╔══════════════════════════════════════════╗
+[CFI] ║        CFI Performance Statistics        ║
+[CFI] ╠══════════════════════════════════════════╣
+[CFI] ║ Total callback executions: 5             ║
+[CFI] ║ Total violations detected: 0             ║
+[CFI] ║ Shadow stack violations:   0             ║
+[CFI] ║ Monitored subscriptions:   1             ║
+[CFI] ║ Validated subscriptions:   1             ║
+[CFI] ║ Shadow stack enabled:      YES           ║
+[CFI] ║ Performance mode:          0             ║
+[CFI] ║ CFI mode:                  PERMISSIVE    ║
+[CFI] ║ Hook status:               SUCCESS       ║
+[CFI] ╚══════════════════════════════════════════╝
+[0;32m[CFI-SUCCESS] ✅ No violations detected in 5 callback executions![0m
+
+=== Vulnerable Target Node ===
+This node has a buffer overflow vulnerability.
+Send messages to /attack_topic to test.
+Use 'OVERFLOW:' prefix to trigger vulnerable code path.
+

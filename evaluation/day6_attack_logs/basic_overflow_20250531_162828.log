@@ -1,0 +1,41 @@
+[CFI] === ROS2 CFI Day 6 (Final Version) ===
+[CFI] PID: 6621
+[CFI] Process: vulnerable_subs
+[CFI] Strict mode ENABLED
+[CFI] Debug mode ENABLED
+[0;32m[CFI-SUCCESS] CFI initialized successfully![0m
+[CFI] Waiting for ROS2 callbacks...
+=== ROS2 콜백 타겟 취약한 노드 ===
+이 노드는 ROS2 subscription 메커니즘 자체를 공격합니다.
+[WARN] [1748676508.437652800] [improved_vulnerable_subscriber]: ⚠️  이 노드는 ROS2 콜백을 타겟으로 하는 취약점을 포함합니다!
+
+=== 메모리 레이아웃 정보 ===
+Context 0:
+  buffer 주소: 0x647b298282c0
+  subscription 주소: 0x647b29828330
+  callback 주소: 0x647b298282f0
+Context 1:
+  buffer 주소: 0x647b29834e60
+  subscription 주소: 0x647b29835010
+  callback 주소: 0x647b29834e90
+Context 2:
+  buffer 주소: 0x647b2983c590
+  subscription 주소: 0x647b2983c720
+  callback 주소: 0x647b2983c5c0
+
+악성 콜백 주소들:
+  malicious_callback: 0x647b0a3d65cc
+  calculator_callback: 0x647b0a3d6938
+[INFO] [1748676508.438407061] [improved_vulnerable_subscriber]: 노드가 준비되었습니다. 공격 명령:
+[INFO] [1748676508.438416539] [improved_vulnerable_subscriber]: 1. 정상 메시지: ros2 topic pub /vuln_topic_0 std_msgs/msg/String "data: 'Hello'"
+[INFO] [1748676508.438423181] [improved_vulnerable_subscriber]: 2. 오버플로우: ros2 topic pub /vuln_control std_msgs/msg/String "data: 'OVERFLOW <topic_id> <size>'"
+[INFO] [1748676508.438427399] [improved_vulnerable_subscriber]: 3. 포인터 덮어쓰기: ros2 topic pub /vuln_control std_msgs/msg/String "data: 'CORRUPT <topic_id>'"
+[0;36m[CFI-DEBUG] Searching for original function: _ZN6rclcpp8Executor20execute_subscriptionESt10shared_ptrINS_16SubscriptionBaseEE[0m
+[0;36m[CFI-DEBUG] Found via RTLD_NEXT: 0x7e4a6905f600[0m
+[0;32m[CFI-SUCCESS] === CFI Protection Active! First callback intercepted ===[0m
+[0;36m[CFI-DEBUG] Intercepted call #1: executor=0x7ffd83fff890, subscription=0x7e4a6916a830[0m
+[0;31m[CFI-ERROR] 🚨 CFI VIOLATION: Unregistered subscription execution attempt![0m
+[0;31m[CFI-ERROR]   Subscription pointer: 0x7e4a6916a830[0m
+[0;31m[CFI-ERROR]   This subscription was never registered with CFI![0m
+[0;31m[CFI-ERROR]   ❌ BLOCKING EXECUTION (strict mode)[0m
+timeout: the monitored command dumped core

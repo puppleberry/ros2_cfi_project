@@ -1,0 +1,17 @@
+[INFO] [1748767147.969547884] [vulnerable_target]: Vulnerable node started!
+[INFO] [1748767147.970041267] [vulnerable_target]: Subscription ptr: 0x5e5cffae5dc0
+[INFO] [1748767147.970054251] [vulnerable_target]: Buffer ptr: 0x5e5cffaf01b0
+[INFO] [1748767147.970060553] [vulnerable_target]: Node ready to receive messages on /attack_topic
+[INFO] [1748767151.095545774] [vulnerable_target]: Received: 'TRIGGER' (len=7)
+[INFO] [1748767151.095738439] [vulnerable_target]: Triggering next callback...
+[INFO] [1748767152.097213687] [vulnerable_target]: Received: 'OVERFLOW:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' (len=137)
+[WARN] [1748767152.097275244] [vulnerable_target]: Processing overflow data...
+[INFO] [1748767152.097287427] [vulnerable_target]: Subscription memory after copy:
+[INFO] [1748767152.097297576] [vulnerable_target]:   +00: c0 25 7f c7 5c 5e 00 00
+[INFO] [1748767152.097311522] [vulnerable_target]:   +08: c0 5d ae ff 5c 5e 00 00
+[INFO] [1748767152.097324276] [vulnerable_target]:   +16: b0 5d ae ff 5c 5e 00 00
+[INFO] [1748767152.097353031] [vulnerable_target]:   +24: 80 ac 87 ff 5c 5e 00 00
+[INFO] [1748767153.099561635] [vulnerable_target]: Received: 'TRIGGER' (len=7)
+[INFO] [1748767153.099757835] [vulnerable_target]: Triggering next callback...
+[INFO] [1748767155.102507947] [vulnerable_target]: Received: 'Final test message' (len=18)
+[INFO] [1748767155.102572850] [vulnerable_target]: Normal processing: Final test message

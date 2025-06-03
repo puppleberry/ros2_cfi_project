@@ -1,28 +1,55 @@
 [CFI] === ROS2 CFI Day 6 (Final Version) ===
-[CFI] PID: 8396
+[CFI] PID: 6483
 [CFI] Process: subscriber
+[CFI] Debug mode ENABLED
 [0;32m[CFI-SUCCESS] CFI initialized successfully![0m
 [CFI] Waiting for ROS2 callbacks...
+[0;36m[CFI-DEBUG] Searching for original function: _ZN6rclcpp8Executor20execute_subscriptionESt10shared_ptrINS_16SubscriptionBaseEE[0m
+[0;36m[CFI-DEBUG] Found via RTLD_NEXT: 0x71b22020c600[0m
 [0;32m[CFI-SUCCESS] === CFI Protection Active! First callback intercepted ===[0m
-[0;32m[CFI-SUCCESS] Registered new subscription 0x7e088dcdc830 (hash: 0x7e4492b18e505ef8)[0m
-[0;32m[CFI-SUCCESS] Registered new subscription 0x6204a25a8600 (hash: 0x94f8496139144cfc)[0m
-[INFO] [1748581525.292482041] [minimal_subscriber]: I heard: 'Stats test'
-[INFO] [1748581527.450025351] [rclcpp]: signal_handler(signum=15)
+[0;36m[CFI-DEBUG] Intercepted call #1: executor=0x7ffff37656e0, subscription=0x71b220317830[0m
+[0;31m[CFI-ERROR] 🚨 CFI VIOLATION: Unregistered subscription execution attempt![0m
+[0;31m[CFI-ERROR]   Subscription pointer: 0x71b220317830[0m
+[0;31m[CFI-ERROR]   This subscription was never registered with CFI![0m
+[0;33m[CFI-WARNING]   ⚠️  ALLOWING EXECUTION (permissive mode)[0m
+[0;36m[CFI-DEBUG] Shadow stack push: depth=1, ret=0x71b22020d10f, sub=0x71b220317830[0m
+[0;36m[CFI-DEBUG] Shadow stack pop: depth=0[0m
+[0;36m[CFI-DEBUG] Intercepted call #2: executor=0x7ffff37656e0, subscription=0x71b220317830[0m
+[0;36m[CFI-DEBUG] Shadow stack push: depth=1, ret=0x71b22020d10f, sub=0x71b220317830[0m
+[0;36m[CFI-DEBUG] Shadow stack pop: depth=0[0m
+[0;36m[CFI-DEBUG] Intercepted call #3: executor=0x7ffff37656e0, subscription=0x71b220317830[0m
+[0;36m[CFI-DEBUG] Shadow stack push: depth=1, ret=0x71b22020d10f, sub=0x71b220317830[0m
+[0;36m[CFI-DEBUG] Shadow stack pop: depth=0[0m
+[0;36m[CFI-DEBUG] Intercepted call #4: executor=0x7ffff37656e0, subscription=0x71b220317830[0m
+[0;36m[CFI-DEBUG] Shadow stack push: depth=1, ret=0x71b22020d10f, sub=0x71b220317830[0m
+[0;36m[CFI-DEBUG] Shadow stack pop: depth=0[0m
+[0;36m[CFI-DEBUG] Intercepted call #5: executor=0x7ffff37656e0, subscription=0x71b220317830[0m
+[0;36m[CFI-DEBUG] Shadow stack push: depth=1, ret=0x71b22020d10f, sub=0x71b220317830[0m
+[0;36m[CFI-DEBUG] Shadow stack pop: depth=0[0m
+[0;36m[CFI-DEBUG] Intercepted call #6: executor=0x7ffff37656e0, subscription=0x60de87b1f600[0m
+[0;31m[CFI-ERROR] 🚨 CFI VIOLATION: Unregistered subscription execution attempt![0m
+[0;31m[CFI-ERROR]   Subscription pointer: 0x60de87b1f600[0m
+[0;31m[CFI-ERROR]   This subscription was never registered with CFI![0m
+[0;33m[CFI-WARNING]   ⚠️  ALLOWING EXECUTION (permissive mode)[0m
+[0;36m[CFI-DEBUG] Shadow stack push: depth=1, ret=0x71b22020d10f, sub=0x60de87b1f600[0m
+[INFO] [1748676470.539884759] [minimal_subscriber]: I heard: 'Stats test'
+[0;36m[CFI-DEBUG] Shadow stack pop: depth=0[0m
+[INFO] [1748676472.768548115] [rclcpp]: signal_handler(signum=15)
 [CFI] 
 === ROS2 CFI Session Summary ===
 [CFI] 
 ╔══════════════════════════════════════════╗
 [CFI] ║        CFI Performance Statistics        ║
 [CFI] ╠══════════════════════════════════════════╣
-[CFI] ║ Total callback executions: 5             ║
-[CFI] ║ Total violations detected: 0             ║
+[CFI] ║ Total callback executions: 6             ║
+[CFI] ║ Total violations detected: 2             ║
 [CFI] ║ Shadow stack violations:   0             ║
 [CFI] ║ Monitored subscriptions:   2             ║
-[CFI] ║ Validated subscriptions:   2             ║
+[CFI] ║ Validated subscriptions:   0             ║
 [CFI] ║ Shadow stack enabled:      YES           ║
 [CFI] ║ Performance mode:          0             ║
 [CFI] ║ CFI mode:                  PERMISSIVE    ║
 [CFI] ║ Hook status:               SUCCESS       ║
 [CFI] ╚══════════════════════════════════════════╝
-[0;32m[CFI-SUCCESS] ✅ No violations detected in 5 callback executions![0m
-[CFI] Statistics saved to /home/acelab/ros2_cfi_project/evaluation/day6_final_logs/test_stats_20250530_140521.txt
+[0;31m[CFI-ERROR] ⚠️  CFI detected 2 violations during this session![0m
+[CFI] Statistics saved to /home/acelab/ros2_cfi_project/evaluation/day6_final_logs/test_stats_20250531_162746.txt

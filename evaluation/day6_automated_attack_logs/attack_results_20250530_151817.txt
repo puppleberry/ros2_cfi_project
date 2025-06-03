@@ -1,0 +1,7 @@
+Attack Test Results - 20250530_151817
+==================================================
+blocked: 0
+detected: 0
+succeeded: 6
+unknown: 0
+error: 0

